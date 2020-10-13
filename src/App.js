@@ -1,11 +1,11 @@
 import React from 'react';
 import {
-  Button, 
-  Container, 
+  Button,
+  Navbar,
   Nav,
-  Navbar, 
   Form,
   FormControl } from 'react-bootstrap';
+import {LinkContainer} from 'react-router-bootstrap';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import About from './pages/About';
 import Blog from './pages/Blog';
@@ -17,9 +17,21 @@ function App() {
         <Navbar bg="dark" variant="dark">
           <Navbar.Brand href="#home">MusobarLab</Navbar.Brand>
           <Nav className="mr-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/blog">Blog</Nav.Link>
-            <Nav.Link href="/about">About</Nav.Link>
+            <LinkContainer to="/">
+              <Nav.Link>
+                <span>Home</span>
+              </Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/blog">
+              <Nav.Link>
+                <span>Blog</span>
+              </Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/about">
+              <Nav.Link>
+                <span>About</span>
+              </Nav.Link>
+            </LinkContainer>
           </Nav>
           <Form inline>
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
